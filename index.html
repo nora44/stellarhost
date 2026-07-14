@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stellar Host | The Powerhouse</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.webp" alt="Logo" />
+        <span>Stellar Host</span>
+      </div>
+      <div class="nav-links">
+        <a href="#pricing">Pricing</a>
+        <a href="#careers">Careers</a>
+        <a href="#">Panel</a>
+        <a href="https://discord.gg/Bc5HDAtqa" class="discord-icon"
+          ><i class="fab fa-discord"></i
+        ></a>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1>Hosting Plans for <span>Bots, Websites, and Games</span></h1>
+      <p>Small Price In Exchange for <span>Strong Power</span></p>
+      <div class="sub-text">
+        We offer a wide range of affordable light strength compute hosting
+        solutions to fit any budget.
+      </div>
+    </header>
+
+    <div class="pricing-container" id="pricing">
+      <!-- الكروت (تم الحفاظ على 3 في الصف كما طلبت) -->
+      <div class="card">
+        <h3>Basic Plan</h3>
+        <ul>
+          <li>CPU: 25%</li>
+          <li>RAM: 512MB</li>
+          <li>Disk: 1GB</li>
+          <li>Bots: 1</li>
+          <li>DB: 1</li>
+          <li>Backups: 1</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Standard Plan</h3>
+        <ul>
+          <li>CPU: 50%</li>
+          <li>RAM: 1GB</li>
+          <li>Disk: 2GB</li>
+          <li>Bots: 1</li>
+          <li>DB: 1</li>
+          <li>Backups: 1</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Advanced Plan</h3>
+        <ul>
+          <li>CPU: 75%</li>
+          <li>RAM: 1.5GB</li>
+          <li>Disk: 3GB</li>
+          <li>Bots: 2</li>
+          <li>DB: 2</li>
+          <li>Backups: 1</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Professional</h3>
+        <ul>
+          <li>CPU: 100%</li>
+          <li>RAM: 2GB</li>
+          <li>Disk: 4GB</li>
+          <li>Bots: 3</li>
+          <li>DB: 2</li>
+          <li>Backups: 2</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Ultimate Plan</h3>
+        <ul>
+          <li>CPU: 125%</li>
+          <li>RAM: 3GB</li>
+          <li>Disk: 6GB</li>
+          <li>Bots: 5</li>
+          <li>DB: 3</li>
+          <li>Backups: 2</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Enterprise</h3>
+        <ul>
+          <li>CPU: 150%</li>
+          <li>RAM: 4GB</li>
+          <li>Disk: 10GB</li>
+          <li>Bots: 3</li>
+          <li>DB: 3</li>
+          <li>Backups: 3</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+    </div>
+
+    <section id="careers" class="careers-section">
+      <h2>Join Our Elite Team</h2>
+      <div class="career-box">
+        <div class="c-item">
+          <i class="fas fa-code"></i> <span>Developer</span>
+        </div>
+        <div class="c-item">
+          <i class="fas fa-headset"></i> <span>Support</span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const btn = document.getElementById("theme-toggle");
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        const icon = btn.querySelector("i");
+        icon.classList.toggle("fa-moon");
+        icon.classList.toggle("fa-sun");
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 100, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "bottom",
+            random: true,
+            out_mode: "out",
+          },
+        },
+        interactivity: { events: { onhover: { enable: false } } },
+      });
+    </script>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Stellar Host</h3>
+          <p>Reliable and powerful hosting for your digital future.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="https://discord.gg/Bc5HDAtqa">Support Center</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="https://discord.gg/Bc5HDAtqa"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stellar Host. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
