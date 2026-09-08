@@ -1,50 +1,47 @@
-/* المتغيرات العامة - تم تغيير Accent Color هنا */
+/* المتغيرات العامة - الطابع البرتقالي الفاخر لـ Stellar Host */
 :root {
-  --bg: #05070a;
-  --card: #0d1117;
-  /* اللون البرتقالي الجديد (مريح للعين وقوي) */
+  --bg: #030712;
+  --card: rgba(13, 17, 23, 0.75);
   --accent: #f97316; 
-  --text: #e2e8f0;
-  /* لون ثانوي للنصوص */
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --text: #f8fafc;
   --text-muted: #94a3b8; 
-  --border: #1f2937;
+  --border: rgba(31, 41, 55, 0.8);
 }
 
 .light-mode {
-  --bg: #f1f5f9; /* رمادي فاتح جداً ومريح أكثر من الأبيض */
-  --card: #ffffff;
-  --accent: #ea580c; /* درجة برتقالية أغمق قليلاً للوضوح في الفاتح */
+  --bg: #f8fafc;
+  --card: rgba(255, 255, 255, 0.85);
+  --accent: #ea580c;
+  --accent-glow: rgba(234, 88, 12, 0.2);
   --text: #0f172a;
   --text-muted: #475569;
-  --border: #e2e8f0;
+  --border: rgba(226, 232, 240, 0.9);
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
-  /* تطبيق خط Inter */
   font-family: 'Inter', sans-serif; 
   margin: 0;
-  transition: background-color 0.3s, color 0.3s;
-  /* تحسين rendering للخطوط */
+  transition: background-color 0.4s ease, color 0.4s ease;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* Navbar بنظام الزجاج (Glassmorphism) */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
-  background: rgba(13, 17, 23, 0.95); /* أغمق قليلاً لبروز أفضل */
+  padding: 18px 8%;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  position: sticky; /* تثبيت النافبار */
+  position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.light-mode .navbar {
-  background: rgba(255, 255, 255, 0.95);
 }
 
 .logo {
@@ -54,26 +51,28 @@ body {
   align-items: center;
   gap: 12px;
   color: var(--text);
+  letter-spacing: -0.5px;
 }
 
 .logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -81,9 +80,10 @@ body {
 }
 
 .discord-icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
+/* خلفية متدرجة وجذابة للـ Particles */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -91,110 +91,117 @@ body {
   z-index: -1;
   top: 0;
   left: 0;
-  /* خلفية متدرجة خفيفة جداً خلف البارتيكلز */
-  background: radial-gradient(circle at center, #1a1d24 0%, var(--bg) 100%);
+  background: radial-gradient(circle at 50% 20%, #111827 0%, var(--bg) 80%);
 }
 .light-mode #particles-js {
-   background: radial-gradient(circle at center, #e0e7ff 0%, var(--bg) 100%);
+  background: radial-gradient(circle at 50% 20%, #fed7aa15 0%, var(--bg) 80%);
 }
 
 #theme-toggle {
   background: transparent;
-  border: 1px solid var(--accent);
+  border: 1.5px solid var(--accent);
   color: var(--accent);
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 #theme-toggle:hover {
   background: var(--accent);
   color: white;
+  box-shadow: 0 0 15px var(--accent-glow);
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 120px 20px; /* مساحة أكبر */
+  padding: 130px 20px 80px 20px;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 20px;
-  max-width: 800px;
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
+  letter-spacing: -1px;
 }
 
 .hero h1 span,
 .hero p span {
   color: var(--accent);
+  text-shadow: 0 0 30px var(--accent-glow);
 }
 
 .hero p {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 20px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .sub-text {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Pricing */
+/* Pricing Section */
 .pricing-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* تجاوبي أفضل */
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 70px auto;
   padding: 0 20px;
 }
 
 .card {
   background: var(--card);
-  padding: 40px;
-  border-radius: 20px; /* حواف أنعم */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 45px 35px;
+  border-radius: 24px;
   border: 1px solid var(--border);
   text-align: center;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
   border-color: var(--accent);
-  transform: translateY(-10px);
-  /* إضافة ظل خفيف عند التحويم */
-  box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.2); 
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px var(--accent-glow);
 }
 
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 15px;
   color: var(--text);
+  font-weight: 700;
 }
 
 .card ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 25px 0;
   flex-grow: 1;
 }
 
 .card ul li {
-  padding: 10px 0;
+  padding: 12px 0;
   color: var(--text-muted);
   border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
 }
 .card ul li:last-child {
   border-bottom: none;
@@ -202,95 +209,96 @@ body {
 
 .card button {
   width: 100%;
-  padding: 15px;
+  padding: 16px;
   background: transparent;
-  border: 2px solid var(--accent); /* أسمك قليلاً */
+  border: 2px solid var(--accent);
   color: var(--accent);
   font-weight: 700;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   margin-top: 20px;
 }
 
 .card button:hover {
   background: var(--accent);
   color: white;
-  box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 8px 25px var(--accent-glow);
 }
 
-/* Careers */
+/* Careers Section */
 .careers-section {
   text-align: center;
-  padding: 80px 20px;
-  background: rgba(255, 255, 255, 0.03); /* خلفية خفيفة جداً للقسم */
-  margin-top: 50px;
-}
-.light-mode .careers-section {
-   background: rgba(0, 0, 0, 0.02);
+  padding: 90px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(249, 115, 22, 0.02) 100%);
+  margin-top: 60px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .career-box {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 25px;
+  margin-top: 45px;
   flex-wrap: wrap;
 }
 
 .c-item {
-  padding: 25px 50px;
+  padding: 22px 45px;
   border: 2px solid var(--accent);
-  border-radius: 15px;
+  border-radius: 16px;
   color: var(--accent);
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  transition: all 0.3s;
-  background: transparent;
+  transition: all 0.3s ease;
+  background: var(--card);
 }
 
 .c-item:hover {
-    background: var(--accent);
-    color: white;
-    transform: scale(1.05);
+  background: var(--accent);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 /* Footer */
 .footer {
-  background: #030712; /* أغمق من الخلفية الرئيسية */
+  background: #02040a;
   border-top: 1px solid var(--border);
   padding: 80px 10% 30px 10%;
   margin-top: 100px;
 }
 .light-mode .footer {
-    background: #e2e8f0;
+  background: #e2e8f0;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  gap: 45px;
 }
 
 .footer-section h3,
 .footer-section h4 {
   color: var(--text);
   margin-bottom: 20px;
+  font-weight: 700;
 }
 .footer-section p {
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .footer-section a {
   display: block;
   color: var(--text-muted);
   text-decoration: none;
-  margin-bottom: 10px;
-  transition: 0.3s;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 .footer-section a:hover {
   color: var(--accent);
@@ -298,8 +306,9 @@ body {
 
 .social-icons {
   display: flex;
-  gap: 15px;
-  font-size: 1.5rem;
+  gap: 18px;
+  font-size: 1.4rem;
+  margin-top: 15px;
 }
 .social-icons a {
   color: var(--text-muted);
@@ -310,8 +319,8 @@ body {
 
 .footer-bottom {
   text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
+  margin-top: 60px;
+  padding-top: 25px;
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.9rem;
